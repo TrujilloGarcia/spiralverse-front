@@ -24,10 +24,6 @@ jobs:
 
       - name: Build step
         run: npm install && npm run build # 📝 Update the build command(s)
+      - name: Deploy to App Engine
+        uses: google-github-actions/deploy-appengine@v1.2.7
 
-      - name: Upload to Deno Deploy
-        uses: denoland/deployctl@v1
-        with:
-          project: "cute-deer-96"
-          entrypoint: "main.ts" # 📝 Update the entrypoint
-          root: "."
