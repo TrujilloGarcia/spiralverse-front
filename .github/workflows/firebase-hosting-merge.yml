@@ -7,10 +7,10 @@ name: Deploy to Firebase Hosting on merge
     branches:
       - main
 jobs:
-  prepare_environment:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v1
+  build_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
       - name: Install Node
         uses: actions/setup-node@v1
         with:
@@ -19,10 +19,6 @@ jobs:
         run: npm install     
       - name: Build
         run: npm run build
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
       - run: ng build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
