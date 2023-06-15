@@ -1,27 +1,26 @@
-# SpiralverseFront
+# Angular 13 Authentication with Firebase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+Learn to create full Firebase authentication system with Angular using AngularFire2 library.
 
-## Development server
+## Written Article
+[Full Angular 13 Firebase Authentication System](https://www.positronx.io/full-angular-firebase-authentication-system)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+- Sign in with Google
+- Sign in with username/password
+- Sign up with username/password
+- Recover forget password
+- Send verification mail to a newly created user
+- Prevent user to access app dashboard unless email is verified
+- Prevent user to access inner pages unless user is not logged In
+- Prevent user to access sign in and sign up components when a user is already logged in
+- Save user data to localstorage when user is logged in
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**If you love this project then show your love by simply sharing this repo with others and don't forget to put a GitHub star ⭐ ! Thanks** :pray:
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Installation Process
+Run `npm install` to install all the required dependencies
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
