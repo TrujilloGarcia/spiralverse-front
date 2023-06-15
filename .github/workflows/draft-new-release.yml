@@ -37,8 +37,8 @@ jobs:
         category: "/language:${{ matrix.language }}"
   upload-artifact:
     runs-on: ubuntu-latest
-    name: Upload artifact for deployment job
-    uses: actions/upload-artifact@v2
+    name: Upload a Build Artifact
+    uses: actions/upload-artifact@v3.1.2
     with:
       name: deploy_dist
       path: dist/sample-angular-artifact
