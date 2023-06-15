@@ -16,25 +16,28 @@ jobs:
       actions: read
       contents: read
       security-events: write
-    strategy:
-        fail-fast: false
-        matrix:
-         language: [ 'javascript' ]
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: ${{ matrix.language }}
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-      with:
-        category: "/language:${{matrix.language}}"
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v2
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+        with:
+          category: "/language:${{matrix.language}}"
+  upload-artifact:
+    runs-on: ubuntu-latest
+    name: Upload artifact for deployment job
+    uses: actions/upload-artifact@v2
+    with:
+      name: deploy_dist
+      path: dist/sample-angular-artifact
   draft-new-release:
     needs: analyze
     name: "Draft a new release"
