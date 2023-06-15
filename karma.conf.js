@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/angularfiebase-authentication'),
+      dir: require('path').join(__dirname, './coverage/spiralverse-front'),
       subdir: '.',
       reporters: [
         { type: 'html' },
