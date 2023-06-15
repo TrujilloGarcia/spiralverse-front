@@ -7,22 +7,20 @@ name: Deploy to Firebase Hosting on merge
     branches:
       - main
 jobs:
-  prepare_environment:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v1
-      - name: Install Node
-      uses: actions/setup-node@v1
-        with:
-          node-version: 12.8
-      - name: npm dependencies
-        run: npm install     
-      - name: Build
-        run: npm run build -- --prod
-  deploy:
+  build_deploy:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: ng build
+      - name: Install Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.14
+      - name: Install npm Dependencies
+        run: npm install
+      - name: Install AngularCLI
+        run: npm install -g @angular/cli > /dev/null
+      - name: Build
+        run: ng build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
