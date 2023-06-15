@@ -11,7 +11,7 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
-    timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
+    timeout-minutes: 360
     permissions:
       actions: read
       contents: read
@@ -23,14 +23,14 @@ jobs:
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
-        languages: ${{ matrix.language }}
+        languages: javascript
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
       with:
-        category: "/language:${{matrix.language}}"
+        category: "/language:javascript"
   upload-artifact:
     runs-on: ubuntu-latest
     name: Upload artifact for deployment job
