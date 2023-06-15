@@ -38,7 +38,6 @@ jobs:
     with:
       name: deploy_dist
       path: dist/sample-angular-artifact
-    
   draft-new-release:
     needs: analyze
     name: "Draft a new release"
