@@ -11,11 +11,15 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
-    timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
+    timeout-minutes: 360
     permissions:
       actions: read
       contents: read
       security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript' ]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -26,18 +30,19 @@ jobs:
           languages: ${{ matrix.language }}
       - name: Autobuild
         uses: github/codeql-action/autobuild@v2
-
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
         with:
           category: "/language:${{matrix.language}}"
   upload-artifact:
+    name: Upload a Build Artifact
     runs-on: ubuntu-latest
-    name: Upload artifact for deployment job
-    uses: actions/upload-artifact@v2
-    with:
-      name: deploy_dist
-      path: dist/sample-angular-artifact
+    steps:
+      - name: upload
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: deploy_dist
+          path: dist/spiralverse-front
   draft-new-release:
     needs: analyze
     name: "Draft a new release"
