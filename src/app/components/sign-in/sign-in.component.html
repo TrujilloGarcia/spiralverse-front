@@ -1,12 +1,12 @@
 <div class="displayTable">
   <div class="displayTableCell">
     <div class="authBlock">
-      <h3>Sign In</h3>
+      <h3 id="title">SPIRALVERSE</h3>
       <div class="formGroup">
         <input
           type="text"
           class="formControl"
-          placeholder="Username"
+          placeholder="Nombre de Usuario"
           #userName
           required
         />
@@ -16,7 +16,7 @@
         <input
           type="password"
           class="formControl"
-          placeholder="Password"
+          placeholder="Contraseña"
           #userPassword
           required
         />
@@ -27,17 +27,17 @@
         <input
           type="button"
           class="btn btnPrimary"
-          value="Log in"
+          value="Iniciar sesión"
           (click)="authService.SignIn(userName.value, userPassword.value)"
         />
       </div>
 
-      <div class="formGroup">
+      <!--<div class="formGroup">
         <span class="or"><span class="orInner">Or</span></span>
-      </div>
+      </div>-->
 
       <!-- Calling GoogleAuth Api from AuthService -->
-      <div class="formGroup">
+      <!-- <div class="formGroup">
         <button
           type="button"
           class="btn googleBtn"
@@ -48,20 +48,20 @@
         </button>
       </div>
 
-      <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
-      </div>
-    </div>
+            <div class="forgotPassword">
+              <span routerLink="/forgot-password">Forgot Password?</span>
+            </div>
+          </div>-->
 
-    <div class="redirectToLogin">
-      <span
-        >Don't have an account?<span
-          class="redirect"
-          routerLink="/register-user"
-        >
-          Sign Up</span
-        ></span
-      >
-    </div>
-  </div>
-</div>
+          <div class="redirectToLogin">
+            <span
+              >Don't have an account?<span
+                class="redirect"
+                routerLink="/register-user"
+              >
+                Sign Up</span
+              ></span
+            >
+          </div>
+        </div>
+      </div>

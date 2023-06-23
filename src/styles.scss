@@ -22,6 +22,11 @@ body {
   vertical-align: text-bottom;
 }
 
+#title {
+  font-size: 60px;
+  color: black;
+}
+
 h1,
 h2,
 h3,
@@ -29,6 +34,7 @@ h4,
 h5,
 h6 {
   font-weight: 600;
+  font-family: "determination_mono_web", sans-serif;
 }
 
 .media-body h1 {
@@ -65,7 +71,7 @@ h6 {
   display: table;
   width: 100%;
   height: 100%;
-  background: #12056d;
+  background: #000000;
 }
 
 .displayTableCell {
@@ -141,7 +147,7 @@ input:-moz-placeholder {
   font-size: 16px;
   font-weight: 600;
   padding: 15px 0;
-  background: #f96ea8;
+  background: #000000;
   color: #ffffff;
   cursor: pointer;
   outline: none;
@@ -660,4 +666,17 @@ body .table thead th {
   .px-logo {
     display: none;
   }
+}
+
+
+
+
+/* FONTS */
+
+@font-face {
+    font-family: 'determination_mono_web';
+    src: url('./assets/fonts/determination-mono-web-regular/determinationmonoweb-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
 }
