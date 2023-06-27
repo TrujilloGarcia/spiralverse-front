@@ -6,10 +6,13 @@ name: Deploy to Firebase Hosting Preview on Release Branch
   workflow_dispatch:
   push:
     branches:
-      - 'feat/**'
+      - 'release/**'
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
+    environment: 
+      name: Preview
+      url: https://spiralverse--preview-1hfxuk37.web.app
     steps:
       - uses: actions/checkout@v3
       - name: Install Node
