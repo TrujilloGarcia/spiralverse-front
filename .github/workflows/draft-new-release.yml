@@ -34,15 +34,6 @@ jobs:
         uses: github/codeql-action/analyze@v2
         with:
           category: "/language:${{matrix.language}}"
-  upload-artifact:
-    name: Upload a Build Artifact
-    runs-on: ubuntu-latest
-    steps:
-      - name: upload
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: deploy_dist
-          path: dist/spiralverse-front
   draft-new-release:
     needs: analyze
     name: "Draft a new release"
