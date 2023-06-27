@@ -11,8 +11,8 @@ on:
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
-    if: startsWith(github.event.pull_request.base.ref, 'release/') || startsWith(github.event.pull_request.base.ref, 'hotfix/')    
-    environment: 
+    if: startsWith(github.event.pull_request.base.ref, 'release/') || startsWith(github.event.pull_request.base.ref, 'hotfix/')
+    environment:
       name: Preview
       url: https://spiralverse--preview-1hfxuk37.web.app
     steps:
