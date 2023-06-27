@@ -9,6 +9,9 @@ name: Deploy to Firebase Production Hosting
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
+    environment: 
+      name: production
+      url: https://spiralverse.web.app/
     steps:
       - uses: actions/checkout@v3
       - name: Install Node
