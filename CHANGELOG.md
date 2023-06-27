@@ -7,7 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
 ## [0.0.6] - 2023-06-27
+
+## [0.0.5] - 2023-06-23
+
+## [0.0.4] - 2023-06-23
+
+## [0.0.3] - 2023-06-15
 
 ## [0.0.2] - 2023-06-15
 
@@ -16,6 +23,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.6...HEAD
 
 [0.0.6]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.2...0.0.6
+  
+[Unreleased]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.5...HEAD
+
+[0.0.5]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.2...0.0.5
+
+[Unreleased]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.4...HEAD
+
+[0.0.4]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.2...0.0.4
+
+[Unreleased]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.3...HEAD
+
+[0.0.3]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.2...0.0.3
 
 [0.0.2]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.1...0.0.2
 
