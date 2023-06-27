@@ -3,9 +3,10 @@
 
 name: Deploy to Firebase Hosting Preview on Release Branch
 'on':
+  workflow_dispatch:
   push:
     branches:
-      - release/*
+      - 'feat/**'
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
