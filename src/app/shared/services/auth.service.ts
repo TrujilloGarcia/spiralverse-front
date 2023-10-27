@@ -34,33 +34,6 @@ export class AuthService {
     });
   }
 
-  // Sign in with email/password
-/*
-  SignIn(email: string, password: string) {
-    return this.afAuth
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.SetUserData(result.user);
-        this.afAuth.authState.subscribe((user) => {
-          if (user) {
-            this.router.navigate(['dashboard']);
-          }
-        });
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
-  }
-*/
-/*
-  SignIn(email: string, password: string) {
-      return this.afAuth.signInWithEmailAndPassword(email, password)
-      .then((result) => this.SetUserData(result.user))
-      .then(() => this.router.navigate(['/dashboard']))
-      .catch((error) => window.alert(error.message));
-  }
-*/
-
 SignIn(email: string, password: string) {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
