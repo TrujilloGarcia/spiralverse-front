@@ -10,7 +10,7 @@ const content = "$process.env.FIREBASE_DETAILS";
 fs.access(dir, fs.constants.F_OK, (err) => {
     if(err){
         // Directory doesn't exist
-        console.log("src doesnt exist, creating now". process.cwd());
+        console.log("src doesnt exist, creating now", process.cwd());
         // create /src
         fs.mkdir(dir, {recursive: true}, (err) => {
             if (err) throw err;
