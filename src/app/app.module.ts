@@ -22,6 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // service
 import { AuthService } from './shared/services/auth.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 
@@ -43,6 +44,12 @@ import { AuthService } from './shared/services/auth.service';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
