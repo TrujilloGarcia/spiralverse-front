@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.22] - 2024-12-01
+
 ## [0.0.21] - 2024-11-30
 
 ## [0.0.20] - 2024-11-30
@@ -79,7 +81,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [0.0.1]: https://github.com/TrujilloGarcia/spiralverse-front/compare/fc7e135fe1597bfb81cb5c70a8e4b06d60bd8bba...0.0.1
 
-[Unreleased]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.21...HEAD
+[Unreleased]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.22...HEAD
+
+[0.0.22]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.21...0.0.22
 
 [0.0.21]: https://github.com/TrujilloGarcia/spiralverse-front/compare/0.0.20...0.0.21
 
