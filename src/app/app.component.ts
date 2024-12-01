@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Platform } from '@angular/cdk/platform';
-import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
+import { SwUpdate, VersionReadyEvent, SwPush } from '@angular/service-worker';
 import { filter, map } from 'rxjs/operators';
+import { NewsletterService } from '../app/newsletter.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,8 @@ import { filter, map } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
 
+
+  readonly VAPID_PUBLIC_KEY = "BHF1I_hdKc3DKOierBCm2jWfGeX2CVc1QCrM7Ph_mlKkx2lScB12V5l3pAJGK_ZXW-EdMln7hSiwD5-_JUky3BY"
   isOnline: boolean;
   modalVersion: boolean;
   modalPwaEvent: any;
@@ -18,9 +21,19 @@ export class AppComponent implements OnInit {
   title = 'spiralverse-front';
 
   constructor(private platform: Platform,
-              private swUpdate: SwUpdate) {
+              private swUpdate: SwUpdate,
+              private swPush: SwPush,
+              private newsletterService: NewsletterService) {
     this.isOnline = false;
     this.modalVersion = false;
+  }
+
+  subscribeToNotifications() {
+    this.swPush.requestSubscription({
+      serverPublicKey: this.VAPID_PUBLIC_KEY
+    })
+    .then(sub => this.newsletterService.addPushSubscriber(sub).subscribe())
+    .catch(err => console.error("Could not subscribe to notifications", err));
   }
 
   public ngOnInit(): void {
